@@ -1,5 +1,5 @@
 ﻿angular.module('CASChillerApp')
-    .controller('LoginCtrl', ['$scope', '$state',  '$http', 'loginService', function ($scope, $state, $http, loginService) {
+    .controller('LoginCtrl', ['$scope', '$state', '$http', '$sessionStorage', 'loginService', function ($scope, $state, $http, $sessionStorage, loginService) {
 
         $scope.Login_Information = "";
 
@@ -32,9 +32,11 @@
 
                     if (result.Status) {
                         loginService.modules = result.Modules;
-
-
-                        $http.defaults.headers.common['token'] = result.AppName;
+                        $scope.$storage = $sessionStorage.$default({
+                            token: result.AppName
+                        });           
+                        $http.defaults.headers.common['token'] = $scope.$storage.token;
+                        
                         $state.go("app");
                     }
                     else {

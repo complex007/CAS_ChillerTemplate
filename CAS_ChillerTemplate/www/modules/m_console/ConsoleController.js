@@ -1,12 +1,14 @@
 ﻿angular.module('CASChillerApp')
-    .controller('ConsoleController', ['$scope', '$rootScope', 'loginService', function ($scope, $rootScope, loginService) {
+    .controller('ConsoleController', ['$scope', '$sessionStorage', 'loginService', function ($scope, $sessionStorage, loginService) {
 
         $scope.modules = loginService.modules;
-        $rootScope.showConsole = " CAS&Chiller ECS";
-        $scope.toggleModules = function () {
-            $rootScope.showConsole = "Back to CAS&Chiller ECS";
-
+        $scope.$storage = $sessionStorage.$default({
+            showConsole: " CAS&Chiller ECS"
+        });
+        
+        $scope.toggleModules = function () {          
+            $scope.$storage.showConsole = "Back to CAS&Chiller ECS";
         };
-
+        
 
     }]);
