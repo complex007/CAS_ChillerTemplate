@@ -1,0 +1,43 @@
+
+#content{
+    min-height:915px;
+}
+#login {
+    background-image: url('../images/background.jpg');
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 915px;
+}
+
+#logininfo {
+        border-radius: 25px;
+        border: 2px solid #8b9dc3;
+      
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: rgba(192,192,192,0.7);
+    }
+    
+#console img {
+        width: 100%;
+    }
+
+
+
+#console .console-cell {
+    border-radius: 25px;
+    border: 2px solid #8b9dc3;
+    padding: 20px;
+    width: 100%;
+    height: 200px;
+    margin-bottom:10%;
+}
+
+footer {
+    background: #3b5998;
+    height:50px;
+    padding-bottom:0;
+    margin-bottom:0;
+  
+}

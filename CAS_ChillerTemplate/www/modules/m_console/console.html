@@ -1,0 +1,22 @@
+﻿<center>
+    <div id="console" ng-controller="ConsoleController">
+        
+            <div  class="col-sm-3" ng-repeat="module in modules">
+                <div class="console-cell">
+                    <div>
+                        <img src={{module.Module_Icon}} ui-sref="app.{{module.Module_Name}}"  ng-click="toggleModules()" height=100>
+                    </div>
+                   {{module.Module_Name}}
+                </div>
+            </div>
+        <div class="col-sm-3">
+            <div class="console-cell">
+                <div>
+                    <img src="images/sample.png" ui-sref="app.testsample" ng-click="toggleModules()" height=100>
+                </div>
+               Testing Sample
+            </div>
+        </div>
+    </div>
+
+</center>
