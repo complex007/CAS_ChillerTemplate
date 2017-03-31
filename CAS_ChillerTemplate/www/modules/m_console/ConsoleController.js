@@ -8,12 +8,9 @@
         else
         {
             $scope.modules = JSON.parse($window.localStorage.getItem('modules'));
+            
             Page.setTitle(" CAS&Chiller ECS");
-            $scope.changeTitle = function () {
-                
-                Page.setTitle("Back to CAS&Chiller ECS");
-                
-            };
+           
             $scope.logout = function () {
                 $window.localStorage.clear();
                 $state.go("login");

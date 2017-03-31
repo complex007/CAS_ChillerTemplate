@@ -1,7 +1,8 @@
 ﻿
 angular.module('CASChillerApp')
   
-    .controller('GraphCtrl', ['$scope',  'dataFactory', function ($scope,  dataFactory) {
+    .controller('GraphCtrl', ['$scope', 'dataFactory', 'Page', function ($scope, dataFactory, Page) {
+        Page.setTitle("< CAS&Chiller ECS");
         $scope.temdata = [];      
         dataFactory.getData().query(
             function (response) {

@@ -9,10 +9,8 @@
 
                     'content': {
                         templateUrl: "shared/shared_login/login.html",
-                        controller: 'LoginCtrl',
-                        data: {
-                            pageTitle: 'Login'
-                        }
+                        controller: 'LoginCtrl'
+                       
                     },
                     'footer': {
                         templateUrl: 'shared/footer.html'
@@ -42,7 +40,7 @@
             .state('app.Facility for CAS', {
                 url: '/facilityforCAS',
                 views: {
-
+                   
                     'content@': {
                         templateUrl: 'modules/m_facilityforCAS/facilityforCAS.html'
                     }
@@ -101,7 +99,7 @@
             .state('app.Life Cycle Analysis', {
                 url: '/lifecircle',
                 views: {
-
+                    
                     'content@': {
                         templateUrl: 'modules/m_lifecircle/lifecircle.html'
                     }
@@ -124,7 +122,10 @@
             .state('app.testsample', {
                 url: '/testsample',
                 views: {
-
+                    'header@': {
+                        templateUrl: 'shared/shared_header/header.html',
+                        controller: 'GraphCtrl'
+                    },
                     'content@': {
                         templateUrl: 'modules/m_test/test.html',
                         controller: 'GraphCtrl'

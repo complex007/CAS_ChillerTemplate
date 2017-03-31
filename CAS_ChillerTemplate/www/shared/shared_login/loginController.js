@@ -3,7 +3,7 @@
 
         if ($window.localStorage.getItem('token')) {
 
-            $state.go("login");
+            $state.go("app");
         }
         else {
             $scope.Login_Information = "";
@@ -20,6 +20,8 @@
                         var result = response;
 
                         if (result.Status) {
+
+//localStorage enable data to be used in all js file  with injection "$window"
 
                             $window.localStorage.setItem('modules', JSON.stringify(result.Modules));
                             $window.localStorage.setItem('token', result.AppName);
@@ -41,6 +43,8 @@
         }
          
     }])
+
+    //configure encrypted password as default token in header for all request after log in 
     .factory('AuthInterceptor', function ($window, $q, $location) {
         return {
             request: function (config) {

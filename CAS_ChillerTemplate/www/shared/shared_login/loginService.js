@@ -1,12 +1,21 @@
 ﻿angular.module('CASChillerApp')
     .constant("loginURL", "http://192.168.95.185/CASChillerSystem/api/")
     .service('loginService', ['$resource', 'loginURL', function ($resource, loginURL) {
-        this.loginResult = function (username, password, appname) {
-            var url = loginURL + "login/" + username + "/" + password + "/" + appname;
-            var result = $resource(url, null, { 'get': { method: 'GET' } });
 
-            return result;
-        };
+        
+
+        // this will get json like following:
+        //{
+        //    "Id": 1000092,
+        //        "Status": true,
+        //            "AppName": "1fEz9yOa+R5yAe02MhRByjgB3ws=",
+        //                "Modules": [
+        //                    {
+        //                        "Module_Name": "Facility for CAS",
+        //                        "Module_Icon": "images/facilityforCAS.jpg"
+        //                    }
+        //                ]
+        //}
         this.loginResult2 = function () {
             var url = loginURL + "login";
             var result = $resource(url, {
@@ -21,7 +30,12 @@
 
             return result;
         };
-        
+       
+
+
+
+
+
         this.modules = [];
     }])
 
