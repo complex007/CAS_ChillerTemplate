@@ -9,7 +9,7 @@
                 </div>
                 <div class="navbar-header">
                     <a class="navbar-brand" ui-sref="app" style="color:white">
-                        {{$storage.showConsole}}
+                    <p ng-bind="title">   </p>
                     </a>
                 </div>
                
@@ -22,5 +22,12 @@
 
 
     </nav>
+
+    <div align="right">
+
+        <a ng-click="logout()" >
+            Log out
+        </a>
+    </div>
 
 </header>

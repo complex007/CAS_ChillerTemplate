@@ -1,58 +1,66 @@
 ﻿angular.module('CASChillerApp')
-    .controller('LoginCtrl', ['$scope', '$state', '$http', '$sessionStorage', 'loginService', function ($scope, $state, $http, $sessionStorage, loginService) {
+    .controller('LoginCtrl', ['$scope', '$state', '$http', '$window', 'loginService', function ($scope, $state, $http, $window, loginService) {
 
-        $scope.Login_Information = "";
+        if ($window.localStorage.getItem('token')) {
 
-        //$scope.login = function () {
-        //    loginService.loginResult($scope.username, $scope.password, $scope.appname).get(
-        //        function (response) {
-        //            var result = response;
-        //            loginService.modules = result.Modules;
-                    
-        //            $state.go("app");
-        //        },
-        //        function (response) {
-        //            $scope.Login_Information = " * Your login information is incorrect!";
-        //        }
-        //    )
-           
-        //}   
-
-        $scope.login = function () {
+            $state.go("login");
+        }
+        else {
+            $scope.Login_Information = "";
 
 
-            loginService.loginResult2().post({
-                Username: $scope.username,
-                Password: $scope.password,
-                Appname: $scope.appname
-            },
-                function (response) {
-                    var result = response;
+            $scope.login = function () {
 
+                loginService.loginResult2().post({
+                    Username: $scope.username,
+                    Password: $scope.password,
+                    Appname: $scope.appname
+                },
+                    function (response) {
+                        var result = response;
 
-                    if (result.Status) {
-                        loginService.modules = result.Modules;
-                        $scope.$storage = $sessionStorage.$default({
-                            token: result.AppName
-                        });           
-                        $http.defaults.headers.common['token'] = $scope.$storage.token;
-                        
-                        $state.go("app");
-                    }
-                    else {
+                        if (result.Status) {
+
+                            $window.localStorage.setItem('modules', JSON.stringify(result.Modules));
+                            $window.localStorage.setItem('token', result.AppName);
+
+                            $state.go("app");
+                        }
+                        else {
+                            console.log("here");
+
+                            $scope.Login_Information = " * Your login information is incorrect!";
+                        }
+
+                    },
+                    function (response) {
                         $scope.Login_Information = " * Your login information is incorrect!";
                     }
-
-                },
-                function (response) {
-                    $scope.Login_Information = " * Your login information is incorrect!";
-                }
-            );
-
-        };   
+                );
+            };
+        }
+         
     }])
-   
-    
+    .factory('AuthInterceptor', function ($window, $q, $location) {
+        return {
+            request: function (config) {
+                config.headers = config.headers || {};
+                if ($window.localStorage.getItem('token')) {
+                    config.headers['token'] =  $window.localStorage.getItem('token');
+                }
+                return config || $q.when(config);
+            },
+            response: function (response) {
+                if (response.status === 401) {
+                    $location.path('/');
+                }
+                return response || $q.when(response);
+            }
+        };
+    })
+    .config(function ($httpProvider) {
+        $httpProvider.interceptors.push('AuthInterceptor');
+    })
 
 
 

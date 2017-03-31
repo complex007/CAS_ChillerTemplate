@@ -1,14 +1,24 @@
 ﻿angular.module('CASChillerApp')
-    .controller('ConsoleController', ['$scope', '$sessionStorage', 'loginService', function ($scope, $sessionStorage, loginService) {
+    .controller('ConsoleController', ['$scope', '$state', '$rootScope', '$window', 'Page', function ($scope, $state, $rootScope, $window, Page) {
 
-        $scope.modules = loginService.modules;
-        $scope.$storage = $sessionStorage.$default({
-            showConsole: " CAS&Chiller ECS"
-        });
-        
-        $scope.toggleModules = function () {          
-            $scope.$storage.showConsole = "Back to CAS&Chiller ECS";
-        };
-        
+        if (!$window.localStorage.getItem('token')) {
 
-    }]);
+            $state.go("login");
+        }
+        else
+        {
+            $scope.modules = JSON.parse($window.localStorage.getItem('modules'));
+            Page.setTitle(" CAS&Chiller ECS");
+            $scope.changeTitle = function () {
+                
+                Page.setTitle("Back to CAS&Chiller ECS");
+                
+            };
+            $scope.logout = function () {
+                $window.localStorage.clear();
+                $state.go("login");
+            };
+        }
+    }])
+
+    ;

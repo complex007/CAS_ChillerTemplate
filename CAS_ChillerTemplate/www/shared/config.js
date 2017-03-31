@@ -20,12 +20,13 @@
                 }
 
             })
+            
 
             .state('app', {
                 url: '/console',
                 views: {
                     'header': {
-                        templateUrl: 'shared/header.html',
+                        templateUrl: 'shared/shared_header/header.html',
                         controller: 'ConsoleController'
                     },
                     'content': {
