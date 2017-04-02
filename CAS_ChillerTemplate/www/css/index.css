@@ -40,3 +40,7 @@ footer {
     margin-bottom:0;
   
 }
+
+
+.divvy{position:relative; background:red;z-index:2;
+}

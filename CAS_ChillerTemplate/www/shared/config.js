@@ -42,7 +42,8 @@
                 views: {
                    
                     'content@': {
-                        templateUrl: 'modules/m_facilityforCAS/facilityforCAS.html'
+                        templateUrl: 'modules/m_facilityforCAS/facilityforCAS.html',
+                        controller:'FacilityCtrl'
                     }
 
                 }
@@ -137,7 +138,9 @@
          $urlRouterProvider.otherwise('/');
 
     })
-    
+    .run(function(editableOptions) {
+        editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+    })
 
 
 
