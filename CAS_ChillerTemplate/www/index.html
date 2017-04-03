@@ -5,7 +5,7 @@
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src  'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' ; style-src 'self' 'unsafe-inline'; media-src *">
         
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no">
@@ -25,8 +25,9 @@
        
     </head>
     <body>
-     
+        
             <div id="header" ui-view="header"></div>
+            <div id="logout" ui-view="logout"></div>
             <div id="content" ui-view="content"></div>
             <div id="footer" ui-view="footer"></div>
 
@@ -50,16 +51,17 @@
         <script type="text/javascript" src="shared/app.js"></script>
         
         <script type="text/javascript" src="shared/config.js"></script>
-        <script type="text/javascript" src="shared/shared_header/headerService.js"></script>
+        
         <script type="text/javascript" src="modules/m_test/testController.js"></script>
         <script type="text/javascript" src="modules/m_test/testServices.js"></script>
       
         <script type="text/javascript" src="shared/shared_login/loginController.js"></script>
         <script type="text/javascript" src="shared/shared_login/loginService.js"></script>
+        <script type="text/javascript" src="shared/shared_logout/LogoutController.js"></script>
+
+
         <script type="text/javascript" src="modules/m_console/ConsoleController.js"></script>
         <script type="text/javascript" src="modules/m_facilityforCAS/facilityController.js"></script>
         <script type="text/javascript" src="modules/m_facilityforCAS/facilityService.js"></script>
-
-
     </body>
 </html>

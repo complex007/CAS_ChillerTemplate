@@ -25,7 +25,7 @@
         </td>
         <td>
             <span editable-text="facility.equipment" e-form="rowform">
-            <p ng-repeat=" equipment in facility.equipment"> {{equipment.equipmentname}} ({{equipment.equipmenttype}})</p>
+            <span ng-repeat=" equipment in facility.equipment"> {{equipment.equipmentname}} ({{equipment.equipmenttype}})</span>
             </span>
         </td>
 
@@ -49,11 +49,20 @@
     </tbody>
 </table>
 
-    <div id="chart" style="z-index:1;">
 
 
+
+
+    <div id="chart">
+       
     </div>
 
+   <div>
+       <input  ng-change="addnewpoint()" ng-model="x">
+       <input  ng-change="addnewpoint()" ng-model="y">
+      
+   </div>
+  
 
 
 </div>

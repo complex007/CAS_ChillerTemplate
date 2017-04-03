@@ -27,6 +27,10 @@
                         templateUrl: 'shared/shared_header/header.html',
                         controller: 'ConsoleController'
                     },
+                    'logout': {
+                        templateUrl: 'shared/shared_logout/logout.html',
+                        controller: 'LogoutController'
+                    },
                     'content': {
                         templateUrl: 'modules/m_console/console.html',
                         controller: 'ConsoleController'
@@ -125,7 +129,7 @@
                 views: {
                     'header@': {
                         templateUrl: 'shared/shared_header/header.html',
-                        controller: 'GraphCtrl'
+                        controller: 'GraphCtrl',                       
                     },
                     'content@': {
                         templateUrl: 'modules/m_test/test.html',

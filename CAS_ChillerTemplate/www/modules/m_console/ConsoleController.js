@@ -1,5 +1,5 @@
 ﻿angular.module('CASChillerApp')
-    .controller('ConsoleController', ['$scope', '$state', '$rootScope', '$window', 'Page', function ($scope, $state, $rootScope, $window, Page) {
+    .controller('ConsoleController', ['$scope', '$state', '$rootScope', '$window', function ($scope, $state, $rootScope, $window) {
 
         if (!$window.localStorage.getItem('token')) {
 
@@ -8,13 +8,9 @@
         else
         {
             $scope.modules = JSON.parse($window.localStorage.getItem('modules'));
-            
-            Page.setTitle(" CAS&Chiller ECS");
-           
-            $scope.logout = function () {
-                $window.localStorage.clear();
-                $state.go("login");
-            };
+            $scope.backname = " CAS&Chiller ECS";
+            $scope.backstate = "app";
+          
         }
     }])
 

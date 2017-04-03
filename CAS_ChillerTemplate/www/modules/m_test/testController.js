@@ -1,8 +1,10 @@
 ﻿
 angular.module('CASChillerApp')
   
-    .controller('GraphCtrl', ['$scope', 'dataFactory', 'Page', function ($scope, dataFactory, Page) {
-        Page.setTitle("< CAS&Chiller ECS");
+    .controller('GraphCtrl', ['$scope', 'dataFactory',  function ($scope, dataFactory) {
+  
+        $scope.backname = "< CAS&Chiller ECS";
+        $scope.backstate = "app";
         $scope.temdata = [];      
         dataFactory.getData().query(
             function (response) {

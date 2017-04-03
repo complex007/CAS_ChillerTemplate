@@ -4,7 +4,7 @@
             <div  class="col-sm-3" ng-repeat="module in modules">
                 <div class="console-cell">
                     <div>
-                        <img src={{module.Module_Icon}} ui-sref="app.{{module.Module_Name}}"  ng-click="changeTitle()" height=100>
+                        <img ng-src="{{module.Module_Icon}}" ui-sref="app.{{module.Module_Name}}"  ng-click="changeTitle()" height=100>
                     </div>
                    {{module.Module_Name}}
                 </div>
