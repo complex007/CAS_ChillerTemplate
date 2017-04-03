@@ -76,7 +76,7 @@ angular.module('CASChillerApp')
             },
 
           });
-
+//add new point inside the coordinate
         $scope.x = 0;
         $scope.y = 0;
         $scope.addnewpoint = function () {
