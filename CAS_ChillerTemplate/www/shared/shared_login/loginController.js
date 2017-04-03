@@ -24,7 +24,7 @@
 //localStorage enable data to be used in all js file  with injection "$window"
 
                             $window.localStorage.setItem('modules', JSON.stringify(result.Modules));
-                            $window.localStorage.setItem('token', result.AppName);
+                            $window.localStorage.setItem('token', result.Token);
 
                             $state.go("app");
                         }

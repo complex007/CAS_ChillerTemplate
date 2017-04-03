@@ -41,8 +41,8 @@
                 }
             })
 
-            .state('app.Facility for CAS', {
-                url: '/facilityforCAS',
+            .state('app.FacilityCAS', {
+                url: '/facilitycas',
                 views: {
                    
                     'content@': {
@@ -53,8 +53,8 @@
                 }
             })
 
-            .state('app.Facility for Chiller', {
-                url: '/facilityforChiller',
+            .state('app.FacilityChiller', {
+                url: '/facilitychiller',
                 views: {
 
                     'content@': {
@@ -65,7 +65,7 @@
             })
 
 
-            .state('app.Compressed Air System', {
+            .state('app.CompressedAirSystem', {
                 url: '/CAS',
                 views: {
 
@@ -77,8 +77,8 @@
             })
 
 
-            .state('app.Compressor', {
-                url: '/compressor',
+            .state('app.PerformanceMeasurement', {
+                url: '/performancemeasurement',
                 views: {
 
                     'content@': {
@@ -89,7 +89,7 @@
             })
 
 
-            .state('app.Energy Conservation Measures Calculation', {
+            .state('app.EnergyConservationMeasuresCalculation', {
                 url: '/calculation',
                 views: {
 
@@ -101,7 +101,7 @@
             })
 
 
-            .state('app.Life Cycle Analysis', {
+            .state('app.LifeCycle', {
                 url: '/lifecircle',
                 views: {
                     
