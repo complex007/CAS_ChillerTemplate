@@ -19,17 +19,15 @@
                     function (response) {
                         var result = response;
 
-                        if (result.Status) {
+                        if (result.Token) {
 
-//localStorage enable data to be used in all js file  with injection "$window"
-
-                            $window.localStorage.setItem('modules', JSON.stringify(result.Modules));
+//localStorage enable data to be used in all js file  with injection "$window"                           
                             $window.localStorage.setItem('token', result.Token);
-
+                            $window.localStorage.setItem('system', $scope.appname);
                             $state.go("app");
                         }
                         else {
-                            console.log("here");
+                            
 
                             $scope.Login_Information = " * Your login information is incorrect!";
                         }

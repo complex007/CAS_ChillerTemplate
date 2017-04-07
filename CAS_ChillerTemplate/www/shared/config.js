@@ -6,6 +6,10 @@
             .state('login', {
                 url: '/',
                 views: {
+                    'header': {
+                        templateUrl: 'shared/shared_login/login_header.html',
+                        controller: 'ConsoleController'
+                    },
 
                     'content': {
                         templateUrl: "shared/shared_login/login.html",
@@ -24,13 +28,10 @@
                 url: '/console',
                 views: {
                     'header': {
-                        templateUrl: 'shared/shared_header/header.html',
+                        templateUrl: 'shared/header.html',
                         controller: 'ConsoleController'
                     },
-                    'logout': {
-                        templateUrl: 'shared/shared_logout/logout.html',
-                        controller: 'LogoutController'
-                    },
+                  
                     'content': {
                         templateUrl: 'modules/m_console/console.html',
                         controller: 'ConsoleController'
@@ -44,21 +45,71 @@
             .state('app.FacilityCAS', {
                 url: '/facilitycas',
                 views: {
-                   
+                    'header@': {
+                        templateUrl: 'shared/header.html',
+                        controller: 'FacilityCtrl'
+                    },
                     'content@': {
-                        templateUrl: 'modules/m_facilityforCAS/facilityforCAS.html',
+                        templateUrl: 'modules/m_facility/facilityforCAS.html',
                         controller:'FacilityCtrl'
+                    }                 
+                }
+            })
+            
+
+
+
+            .state('app.FacilityCAS.Detail', {
+                url: '/:facilityid',
+                views: {
+                    'header@': {
+                        templateUrl: 'shared/header.html',
+                        controller: 'FacilityDetailCtrl'
+                    },
+                    'content@': {
+                        templateUrl: 'modules/m_facility/facilityDetailForCAS.html',
+                        controller: 'FacilityDetailCtrl'
                     }
 
                 }
             })
-
             .state('app.FacilityChiller', {
                 url: '/facilitychiller',
                 views: {
-
+                    'header@': {
+                        templateUrl: 'shared/header.html',
+                        controller: 'FacilityCtrl'
+                    },
                     'content@': {
-                        templateUrl: 'modules/m_facilityforChiller/facilityforChiller.html'
+                        templateUrl: 'modules/m_facility/facilityforChiller.html',
+                        controller: 'FacilityCtrl'
+                    }
+
+                }
+            })
+            .state('app.FacilityChiller.NewFacility', {
+                url: '/newfacility',
+                views: {
+                    'header@': {
+                        templateUrl: 'shared/header.html',
+                        controller: 'AddFacilityCtrl'
+                    },
+                    'content@': {
+                        templateUrl: 'modules/m_facility/addFacilityForChiller.html',
+                        controller: 'AddFacilityCtrl'
+                    }
+                }
+            })
+            .state('app.FacilityChiller.Detail', {
+                url: '/:facilityid',
+                views: {
+                    'header@': {
+                        templateUrl: 'shared/header.html',
+                        controller: 'FacilityDetailCtrl'
+                    },
+                    'content@': {
+                        templateUrl: 'modules/m_facility/facilityDetailForChiller.html',
+                        controller: 'FacilityDetailCtrl'
                     }
 
                 }
@@ -124,20 +175,7 @@
                 }
             })
 
-            .state('app.testsample', {
-                url: '/testsample',
-                views: {
-                    'header@': {
-                        templateUrl: 'shared/shared_header/header.html',
-                        controller: 'GraphCtrl',                       
-                    },
-                    'content@': {
-                        templateUrl: 'modules/m_test/test.html',
-                        controller: 'GraphCtrl'
-                    }
-
-                }
-            });
+           
 
          $urlRouterProvider.otherwise('/');
 

@@ -1,47 +1,88 @@
-
-#content{
-    min-height:915px;
+.navbar-absolute-top {
+    top: 0;
+    border-width: 0 0 1px;
 }
+
+.navbar-absolute-bottom, .navbar-absolute-top {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.navbar-app {
+    min-height: 20px;
+    border-color: #464683;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.navbar {
+    position: relative;
+    min-height: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+   
+}
+div {
+    display: block;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    font-weight: 400;
+}
+
 #login {
-    background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 915px;
+   
+    height: 100%;
 }
 
 #logininfo {
-        border-radius: 25px;
-        border: 2px solid #8b9dc3;
-      
-        margin-left: 10%;
-        margin-right: 10%;
-        background-color: rgba(192,192,192,0.7);
+    border-radius: 25px;
+    border: 2px solid #8b9dc3;
+    background-color: rgba(192,192,192,0.7);
+    height: 100%;
+}
+
+
+#content {
+    margin-top:5%;
+}
+#content #login {
+        margin-top: 0;
     }
     
+    
 #console img {
-        width: 100%;
+        background-size: cover;
     }
 
 
 
 #console .console-cell {
-    border-radius: 25px;
-    border: 2px solid #8b9dc3;
-    padding: 20px;
-    width: 100%;
-    height: 200px;
-    margin-bottom:10%;
-}
+    margin-top:5%;
+    padding-top:20%;
+    border-radius: 50%;
+    
+    padding:0;
+    width:100%;
+    height: 10%;
 
-footer {
-    background: #3b5998;
-    height:50px;
-    padding-bottom:0;
-    margin-bottom:0;
-  
 }
 
 
 .divvy{position:relative; background:red;
+}
+
+.facilityinfo{
+    margin-bottom:5%;
 }
 

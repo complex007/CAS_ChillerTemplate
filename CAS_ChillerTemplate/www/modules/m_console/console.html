@@ -1,22 +1,17 @@
-﻿<center>
-    <div id="console" ng-controller="ConsoleController">
+﻿<div class="app-content scrollable-content container-fluid">
+    <div id="console" class="container-fluid" ng-controller="ConsoleController">
         
-            <div  class="col-sm-3" ng-repeat="module in modules">
+            <div class="col-xs-4" ng-repeat="module in modules">
                 <div class="console-cell">
                     <div>
-                        <img ng-src="{{module.Module_Icon}}" ui-sref="app.{{module.Module_Name}}"  ng-click="changeTitle()" height=100>
+                        <img  align:center ng-src="{{module.ModuleIcon}}" ui-sref="app.{{module.ModuleName}}"  height=100>
                     </div>
-                   {{module.Module_Display}}
+                    <div>
+                     <label>{{module.ModuleDisplay}}</label>   
+                    </div>
                 </div>
             </div>
-        <div class="col-sm-3">
-            <div class="console-cell">
-                <div>
-                    <img src="images/sample.png" ui-sref="app.testsample" ng-click="changeTitle()" height=100>
-                </div>
-               Testing Sample
-            </div>
-        </div>
+       
     </div>
-
-</center>
+    <div style="height:30px"> </div>
+</div>

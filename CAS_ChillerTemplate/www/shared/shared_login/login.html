@@ -1,77 +1,62 @@
-﻿
-<div id="login">
-    <div style="margin-bottom:10%;" >
-        <center>
-            <img src="images/production-512.png" height=130 width=141>
-        </center>
-    </div>
-       
-    
-    <section id="main-content" class="animated fadeInRight" style="text-align:center;">
-        
-        <div style="text-align:center;">
-            <div id="logininfo">
-                <h2 style="text-align:center;">Welcome to CAS & Chiller Energy Conservation System</h2>
-                <form>
-                    <center>
-
-                        <table style="text-align:left;" >
-                            <tr>
-                                <td>
-                                    <h3>Username</h3>
-                                </td>
-                                <td>
-                                    <input type="text" ng-model="username" style="width:100%">
-                                </td>
-
-                            </tr>
-                            <tr>
-
-                                <td>
+﻿<div class="app-content scrollable-content container-fluid">
 
 
-                                    <h3>Password:</h3>
-                                </td>
-                                <td>
-
-
-                                    <input type="password" ng-model="password" style="width:100%">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h3>
-                                        System:
-                                    </h3>
-                                </td>
-
-                                <td>
-
-                                    <ul style="list-style: none;">
-                                        <li>
-                                            <h4> <input type="radio" name="appname" ng-model="appname" value="CompressedAirSystem" checked> Compressed Air System</h4>
-                                        </li>
-                                        <li>
-                                            <h4>
-                                                <input type="radio" name="appname" ng-model="appname" value="ChillerSystem"> Chiller System
-                                            </h4>
-                                        </li>
-                                    </ul>
-
-
-
-
-
-                                </td>
-
-                            </tr>
-                        </table>
-
-                    </center>
-                    <button class="btn btn-info" style="width:65%;text-align:center; font-weight:bold;" ng-click="login()">Login</button>  
-                </form>
-                <div style="height:20px;">{{Login_Information}}</div>
-            </div>
+    <div id="login">
+        <div style="margin-bottom:2%; margin-top:0">
+            <center>
+                <img src="images/production-512.png" style="height:20%;width:20%">
+            </center>
         </div>
-    </section>
+
+
+        <section id="main-content" class=" ng-pristine ng-valid">
+
+
+            <div id="logininfo">
+
+                <form>
+                    <fieldset>
+
+                        <div class="form-group has-success has-feedback">
+                            <label>Username</label>
+
+                            <input type="text" ng-model="username" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty">
+
+                        </div>
+                        <div class="form-group has-success has-feedback">
+                            <label>Password:</label>
+
+                            <input type="password" ng-model="password" class="form-control needsclick">
+
+                        </div>
+
+                        <div class="form-group has-success has-feedback">
+                            <label> System:</label>
+
+                            <ul style="list-style: none;">
+                                <li>
+                                    <input type="radio" name="appname" ng-model="appname" value="CompressedAirSystem" checked> Compressed Air System
+                                </li>
+                                <li>
+
+                                    <input type="radio" name="appname" ng-model="appname" value="ChillerSystem"> Chiller System
+
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+
+                    </fieldset>
+                    <button class="btn btn-primary btn-block" style="width:65%;text-align:center; font-weight:bold;" ng-click="login()">Login</button>
+                </form>
+                <div style="height:30px;">{{Login_Information}}</div>
+
+            </div>
+            <div style="height:360px"> </div>
+        </section>
+        
+    </div>
+   
 </div>
